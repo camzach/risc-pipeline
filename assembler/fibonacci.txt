@@ -1,0 +1,17 @@
+#data
+0x0 0x1
+0x1 0x1
+
+#start
+LOADI 	%0 0x1
+LOAD 	%0 %0
+LOADI 	%1 0x0
+LOAD 	%1 %1
+LOADI	%2 0x1
+LOADI	%3 0x1
+.LOOP
+ADD	%0 %0 %1
+LOAD	%1 %2
+ADD	%2 %2 %3
+STORE	%0 %2
+JMP	.LOOP

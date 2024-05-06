@@ -1,0 +1,17 @@
+#alias
+$DEAD	0xdead
+$DADR	0x0
+$BEEF	0xbeef
+$BADR	0x1
+
+#data
+$DADR	$DEAD
+$BADR	$BEEF
+0x2	0x1234
+
+#start
+LOADI %0 $DADR
+LOAD %0 %0
+ADD %0 %0 %0
+LOADI %1 $BADR
+LOAD %1 %1

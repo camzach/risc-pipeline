@@ -1,0 +1,19 @@
+#alias
+$MAX 0x0010
+$SKIP 0x0001
+$LINE 0x25
+
+#start
+LOADI	%0 $MAX
+LOADI	%1 $SKIP
+LOADI	%2 $MAX
+LOADI	%3 $LINE
+.LOOP
+STORE	%0 %2
+SUB	%0 %0 %1
+SUB 	%2 %2 %1
+JNZ	%0 .LOOP
+LOADI	%0 $MAX
+ADD	%2 %2 %3
+ADD	%2 %2 %0
+JMP	.LOOP
